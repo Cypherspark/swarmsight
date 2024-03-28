@@ -1,0 +1,10 @@
+services:
+  - name: service1
+    port: 9090
+    metrics_path: /metrics
+  - name: service2
+    port: 9100
+    metrics_path: /metrics
+  - name: service3
+    port: 9200
+    metrics_path: /metrics
