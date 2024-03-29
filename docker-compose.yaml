@@ -7,7 +7,7 @@ networks:
 
 services:
   statsd-exporter:
-      image: ${REGISTRY_ADDR}/statsd-exporter:v0.26.0
+      image: ${REGISTRY_ADDR}statsd-exporter:v0.26.0
       ports:
         - "9102:9102"
       volumes:
@@ -41,7 +41,7 @@ services:
           memory: 64M
 
   prometheus:
-    image: ${REGISTRY_ADDR}/bitnami/prometheus:v2.5.0
+    image: ${REGISTRY_ADDR}bitnami/prometheus:v2.5.0
     networks:
       - net
     command:
@@ -68,7 +68,7 @@ services:
           memory: 128M
 
   dockerd-exporter:
-    image: ${REGISTRY_ADDR}/caddy:0.10.10
+    image: ${REGISTRY_ADDR}caddy:0.10.10
     networks:
       - net
     environment:
@@ -85,7 +85,7 @@ services:
           memory: 64M
 
   cadvisor:
-    image: ${REGISTRY_ADDR}/google/cadvisor:v0.33.0
+    image: ${REGISTRY_ADDR}google/cadvisor:v0.33.0
     networks:
       - net
     command: -logtostderr -docker_only

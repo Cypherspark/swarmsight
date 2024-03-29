@@ -1,4 +1,4 @@
-REGISTRY_ADDR = hub.docker.com
+REGISTRY_ADDR = 
 BASE_DIR = /opt/swarmsight
 
 run: 
