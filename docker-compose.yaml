@@ -68,7 +68,7 @@ services:
           memory: 128M
 
   dockerd-exporter:
-    image: ${REGISTRY_ADDR}caddy:0.10.10
+    image: ${REGISTRY_ADDR}stefanprodan/caddy:0.10.10
     networks:
       - net
     environment:
