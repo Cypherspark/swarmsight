@@ -41,7 +41,7 @@ services:
           memory: 64M
 
   prometheus:
-    image: ${REGISTRY_ADDR}bitnami/prometheus:v2.5.0
+    image: ${REGISTRY_ADDR}bitnami/prometheus:2.50.0
     networks:
       - net
     command:
