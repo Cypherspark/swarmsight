@@ -16,7 +16,7 @@ services:
         - --statsd.mapping-config=/tmp/statsd_mapping.yaml
         
   node-exporter:
-    image: ${REGISTRY_ADDR}/prom/node-exporter:v1.7.0
+    image: ${REGISTRY_ADDR}prom/node-exporter:v1.7.0
     networks:
       - net
     environment:
