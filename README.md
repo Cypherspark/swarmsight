@@ -10,6 +10,29 @@ The project facilitates the monitoring of Docker Swarm clusters by:
 2. **Automating Config Generation:** Utilizing a Go application to process these details and generate a `prometheus.yml` file tailored for your Swarm services.
 3. **Simplifying Deployment:** Providing an automated deployment process into a Docker Swarm stack, employing the generated configuration.
 
+## Key Services
+
+### StatsD Exporter
+
+Transforms StatsD metrics into Prometheus metrics. It uses `statsd_mapping.yaml` for metric translation and naming conventions, making it a pivotal tool for custom application metrics monitoring.
+
+### Node Exporter
+
+Monitors the host system. Deployed globally, it gathers hardware- and OS-level metrics across all nodes in the Swarm, including CPU, memory, disk, and network utilization, crucial for assessing the health and performance of the physical servers or VMs running the Swarm.
+
+### Prometheus
+
+Central to the monitoring stack, it aggregates and stores metrics data. Prometheus is configured to scrape metrics from various exporters and services within the cluster. It's deployed with a set of rules (`node_rules`, `task_rules`) for alerting and metrics processing, operationalizing your monitoring with actionable insights.
+
+### Docker Daemon Exporter (Caddy)
+
+Provides metrics about the Docker daemon itself, allowing visibility into Docker’s operational state. It's vital for understanding the broader context of the Swarm’s health, like network configurations and runtime metrics.
+
+### cAdvisor
+
+Offers container-specific metrics such as resource usage and performance characteristics. Deployed globally, it enables fine-grained monitoring of container lifecycles, resource consumption, and performance, essential for application-level insights.
+
+
 ## Prerequisites
 
 * Docker and Docker Swarm initialized
