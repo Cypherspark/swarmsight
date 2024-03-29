@@ -95,6 +95,7 @@ services:
       - /var/run:/var/run
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+      - /proc:/host/proc:ro
     deploy:
       mode: global
       resources:
