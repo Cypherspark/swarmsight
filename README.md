@@ -32,6 +32,8 @@ The project facilitates the monitoring of Docker Swarm clusters by:
    Execute the following command to build the Docker image, generate the `prometheus.yml`, and deploy Prometheus to your Docker Swarm stack:
 
    ```bash
+   make build-entrypoint-image
+   make run-entrypoint
    make run REGISTRY_ADDR=<your-registry-address>
    ```
 
