@@ -18,4 +18,4 @@ COPY --from=builder /app/main .
 COPY --from=builder /app/services.yaml .
 COPY --from=builder /app/prometheus.tpl .
 
-CMD ["./main"]
+CMD ["/app/main"]
