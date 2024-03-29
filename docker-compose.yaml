@@ -45,16 +45,16 @@ services:
     networks:
       - net
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--config.file=/etc/prometheus/prometheus.yaml'
       - '--storage.tsdb.path=/prometheus'
       - '--storage.tsdb.retention=${PROMETHEUS_RETENTION:-24h}'
     volumes:
       - prometheus:/prometheus
     configs:
       - source: node_rules
-        target: /etc/prometheus/swarm_node.rules.yml
+        target: /etc/prometheus/swarm_node.rules.yaml
       - source: task_rules
-        target: /etc/prometheus/swarm_task.rules.yml
+        target: /etc/prometheus/swarm_task.rules.yaml
     deploy:
       mode: replicated
       replicas: 1
@@ -102,3 +102,14 @@ services:
           memory: 128M
         reservations:
           memory: 64M
+
+configs:
+  dockerd_config:
+    file: ./dockerd-exporter/Caddyfile
+  node_rules:
+    file: ./prometheus/rules/swarm_node.rules.yaml
+  task_rules:
+    file: ./prometheus/rules/swarm_task.rules.yaml
+
+volumes:
+    prometheus: {}
