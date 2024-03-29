@@ -12,7 +12,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
 FROM alpine:latest  
 
-WORKDIR /root/
+WORKDIR /app
 
 COPY --from=builder /app/main .
 COPY --from=builder /app/services.yaml .
