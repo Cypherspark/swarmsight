@@ -16,7 +16,7 @@ services:
         - --statsd.mapping-config=/tmp/statsd_mapping.yaml
         
   node-exporter:
-    image: ${REGISTRY_ADDR}/prom/node-exporter:v0.16.0
+    image: ${REGISTRY_ADDR}/prom/node-exporter:v1.7.0
     networks:
       - net
     environment:
@@ -68,7 +68,7 @@ services:
           memory: 128M
 
   dockerd-exporter:
-    image: ${REGISTRY_ADDR}/caddy
+    image: ${REGISTRY_ADDR}/caddy:0.10.10
     networks:
       - net
     environment:
@@ -85,7 +85,7 @@ services:
           memory: 64M
 
   cadvisor:
-    image: ${REGISTRY_ADDR}/google/cadvisor
+    image: ${REGISTRY_ADDR}/google/cadvisor:v0.33.0
     networks:
       - net
     command: -logtostderr -docker_only
