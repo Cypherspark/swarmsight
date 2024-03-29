@@ -7,7 +7,7 @@ networks:
 
 services:
   statsd-exporter:
-      image: ${REGISTRY_ADDR}statsd-exporter:v0.26.0
+      image: ${REGISTRY_ADDR}prom/statsd-exporter:v0.26.0
       ports:
         - "9102:9102"
       volumes:
