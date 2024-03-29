@@ -1,5 +1,5 @@
-REGISTRY_ADDR = 
-BASE_DIR = /opt/swarmsight
+REGISTRY_ADDR=
+BASE_DIR=/opt/swarmsight
 
 build-entrypoint-image:
 	docker build -t generate-prom-config .
