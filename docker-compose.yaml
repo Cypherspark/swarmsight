@@ -51,6 +51,8 @@ services:
     volumes:
       - prometheus:/prometheus
     configs:
+      - source: prom_scrape_conf
+        target: /etc/prometheus/prometheus.yaml
       - source: node_rules
         target: /etc/prometheus/swarm_node.rules.yaml
       - source: task_rules
@@ -107,6 +109,8 @@ services:
 configs:
   dockerd_config:
     file: ./dockerd-exporter/Caddyfile
+  prom_scrape_conf:
+    file: ./prometheus/prometheus.yaml
   node_rules:
     file: ./prometheus/rules/swarm_node.rules.yaml
   task_rules:
