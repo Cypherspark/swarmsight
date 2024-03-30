@@ -41,7 +41,7 @@ scrape_configs:
 {{- range .Services }}
   - job_name: '{{ .Name }}'
     metrics_path: '{{ .MetricsPath }}'
-    dockerswarm_sd_config:
+    dockerswarm_sd_configs:
       - host: unix:///var/run/docker.sock
         role: tasks
         filters:
