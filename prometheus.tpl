@@ -16,7 +16,7 @@ scrape_configs:
       - 'tasks.statsd-exporter'
       type: 'A'
       port: 9102
-	
+
   - job_name: 'dockerd-exporter'
     dns_sd_configs:
     - names:
@@ -37,7 +37,7 @@ scrape_configs:
       - 'tasks.node-exporter'
       type: 'A'
       port: 9100
-    
+
 {{- range .Services }}
   - job_name: '{{ .Name }}'
     metrics_path: '{{ .MetricsPath }}'
