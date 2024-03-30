@@ -57,6 +57,8 @@ services:
         target: /etc/prometheus/swarm_node.rules.yaml
       - source: task_rules
         target: /etc/prometheus/swarm_task.rules.yaml
+    ports:
+      - 9090:9090
     deploy:
       mode: replicated
       replicas: 1
